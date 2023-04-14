@@ -27,7 +27,7 @@ import java.util.Map;
 public class register extends AppCompatActivity {
 
     EditText username,email,password,phone;
-    Button register;
+    Button register,skip;
 
 
     @Override
@@ -39,6 +39,18 @@ public class register extends AppCompatActivity {
         phone = findViewById(R.id.phone);
         password = findViewById(R.id.password);
         register = findViewById(R.id.registerbtn);
+        skip = findViewById(R.id.skip);
+
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(register.this, Home.class));
+
+
+            }
+        });
+
+
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

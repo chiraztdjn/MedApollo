@@ -16,6 +16,7 @@ public class homepage extends AppCompatActivity {
 
     SearchView searchView;
     RecyclerView recyclerView;
+
     ArrayList<Medclass> arrayList=new ArrayList<>();
     ArrayList<Medclass> searchList;
     String[] medlist = new String[]{"paracetamol","doliprane","clamoxyl","proton","spasfon","augmentin"

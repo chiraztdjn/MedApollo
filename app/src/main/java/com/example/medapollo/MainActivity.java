@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText email,password;
@@ -25,6 +26,15 @@ public class MainActivity extends AppCompatActivity {
         loginState = findViewById(R.id.loggedinoption);
         register= findViewById(R.id.registerbtn);
 
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { login();
+
+            }
+        });
+
+
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,5 +42,21 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    private void login() {
+        EditText email=findViewById(R.id.email);
+        EditText password=findViewById(R.id.password);
+
+        String smail=email.getText().toString();
+        String spassword=password.getText().toString();
+
+        if(smail.length()==0)
+            Toast.makeText(this, "Please enter your email", Toast.LENGTH_SHORT).show();
+        if(spassword.length()==0)
+            Toast.makeText(this, "Please enter your password", Toast.LENGTH_SHORT).show();
+
+        finish();
+
     }
 }
